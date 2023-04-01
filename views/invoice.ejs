@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Billing Management</title>
+</head>
+<style>
+  table td:first-child {
+  width: 120px;
+  font-weight: bold;
+}
+
+</style>
+<body>
+  <h1>Bill Amount</h1>
+  <table>
+    <tr>
+      <td>Food Name:</td>
+      <td><%= order.itemName %></td>
+    </tr>
+    <tr>
+      <td>Food Price:</td>
+      <td>$<%= order.itemPrice %></td>
+    </tr>
+    <tr>
+      <td>Quantity:</td>
+      <td><%= order.quantity %></td>
+    </tr>
+    <tr>
+      <td>Subtotal:</td>
+      <td>$<%= order.subtotal.toFixed(2) %></td>
+    </tr>
+    <tr>
+      <td>Tax (10%):</td>
+      <td>$<%= order.tax.toFixed(2) %></td>
+    </tr>
+    <tr>
+      <td>Total:</td>
+      <td>$<%= order.total.toFixed(2) %></td>
+    </tr>
+  </table>
+</body>
+</html>

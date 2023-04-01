@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Billing Management</title>
+</head>
+<style>
+  table td:nth-child(2) {
+  width: 120px;
+}
+
+table td:nth-child(3) {
+  width: 80px;
+}
+
+table td:nth-child(4), table td:nth-child(5), table td:nth-child(6) {
+  width: 100px;
+  text-align: right;
+}
+</style>
+<body>
+  <h1>Orders</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Food Name</th>
+        <th>Food Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Tax (10%)</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.forEach((order) => { %>
+        <tr>
+          <td><%= order.itemName %></td>
+          <td>$<%= order.itemPrice %></td>
+          <td><%= order.quantity %></td>
+          <td>$<%= order.subtotal.toFixed(2) %></td>
+          <td>$<%= order.tax.toFixed(2) %></td>
+          <td>$<%= order.total.toFixed(2) %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
